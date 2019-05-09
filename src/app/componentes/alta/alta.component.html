@@ -1,0 +1,39 @@
+<!--<br><br><br>
+<div>
+
+  <label> Ingrese descripcion: </label>
+  <input type="text" [(ngModel)]="unProducto.descripcion"/>
+<br><br>
+  <label> Ingrese tipo: </label>
+  <input type="text" [(ngModel)]="unProducto.tipo"/>
+<br><br>
+  <label> Ingrese precio: </label>
+  <input type="number" [(ngModel)]="unProducto.precio"/>
+  <br><br>
+  <label> Ingrese fecha de Vencimiento: </label>
+  <input type="text" [(ngModel)]="unProducto.fechaDeVencimiento"/>
+  
+<br><br>
+  <input type="button" value="Enviar" (click)="alta()">
+</div>
+<br><br>-->
+
+<form [formGroup]="registroForm" (ngSubmit)="alta()">
+
+    <label> Ingrese descripcion: </label>
+    <input type="text" name="descripcion" [formControl]="descripcion" [(ngModel)]="unProducto.descripcion"/>
+  <br><br>
+    <label> Ingrese tipo: </label>
+    <input type="text" name="tipo" [formControl]="tipo" [(ngModel)]="unProducto.tipo"/>
+  <br><br>  
+    <label> Ingrese precio: </label>
+    <input type="number" name="precio" [formControl]="precio" [(ngModel)]="unProducto.precio"/>
+    <br><br>
+    <label> Ingrese fecha de Vencimiento: </label>
+    <input type="text" name="vencimiento" [formControl]="vencimiento" [(ngModel)]="unProducto.fechaDeVencimiento"/>
+    <br><br>  
+    <div>
+    <button type="submit" [disabled]="!registroForm.valid">Enviar</button>
+  </div>
+</form>
+  <br><br>

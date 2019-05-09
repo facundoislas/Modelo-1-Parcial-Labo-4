@@ -1,0 +1,10 @@
+<app-busqueda (resultadoBusqueda)="unProducto=$event"></app-busqueda>
+
+<div *ngIf="unProducto"> 
+  <div>Descripcion: {{unProducto.descripcion}}</div><br>
+  <div>Tipo: {{unProducto.tipo}}</div><br>
+  <div>Precio: ${{unProducto.precio}}</div><br>
+  <div>Fecha de Vencimiento: {{unProducto.fechaDeVencimiento}}</div><br>
+  <div>Foto: <img src="assets/{{unProducto.rutaDeFoto}}" style="width: 120px"/></div><br>
+</div>
+

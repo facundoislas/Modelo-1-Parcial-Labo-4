@@ -1,0 +1,30 @@
+<table border=1 style="text-align: center" >
+  <thead>
+    <th>id</th>
+    <th>descripcion</th>
+    <th>tipo</th>
+    <th>precio</th>
+    <th>fecha de vencimiento</th>
+    <th>foto</th>
+    <th>boton</th>
+
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let prod of productos">
+
+      <td>{{prod.id}}</td>
+      <td>{{prod.descripcion}}</td>
+      <td>{{prod.tipo}}</td>
+      <td>{{prod.precio}}</td>
+      <td>{{prod.fechaDeVencimiento}}</td>
+      <td><img src="assets/{{prod.rutaDeFoto}}" style="width: 120px"/></td>
+      <td><app-boton id="{{prod.id}}" (borrado)="mostrarLista()"></app-boton></td>
+
+      </tr>
+  </tbody>
+
+
+</table>
+<br><br>
+<router-outlet></router-outlet>
